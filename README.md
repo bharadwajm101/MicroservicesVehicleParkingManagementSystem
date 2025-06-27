@@ -133,15 +133,19 @@ flowchart TD
 ### 6. Module Overview
 #### 6.1 User Management
 Manages user registration, login, and role-based access control for admins, staff, and customers. Ensures secure authentication and authorization processes.
+- [User Service](./user-service/README.md)
 
 #### 6.2 Parking Slot Management
 Handles parking slot operations such as adding, updating, and checking availability. Maintains real-time status of parking slots.
+- [Parking Slot Service](./parking-slot-service/README.md)
 
 #### 6.3 Vehicle Entry & Exit Logging
 Logs vehicle movements and updates parking slot statuses dynamically. Provides a seamless tracking mechanism for entry and exit.
+- [Vehicle Log Service](./vehicle-log-service/README.md)
 
 #### 6.4 Reservation System
 Enables users to book, modify, or cancel parking slots. Ensures smooth reservation management with real-time updates.
+- [Reservation Service](./reservation-service/README.md)
 
 #### 6.5 Billing and Payments
 Generates bills based on parking duration and processes payments securely. Supports multiple payment methods for user convenience.
@@ -465,12 +469,4 @@ cd vehicle-parking-management-system
     - The React app will typically open in your browser at `http://localhost:3000`.
 
 ---
-<!-- ### 15. Testing
-Run the tests using Maven:
-```bash
-mvn test
-``` -->
-<!-- ### 15. Contact
-Team 2
 
-Project Link: [Vehicle Parking Management System](https://github.com/your-username/vehicle-parking-management-system) -->
