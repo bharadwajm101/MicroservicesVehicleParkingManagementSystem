@@ -24,19 +24,24 @@
 14. [Setup Instructions](#14-setup-instructions)
 15. [Contact](#11-contact)
 
+---
 ### 1. Introduction
-The Vehicle Parking Management System is a comprehensive solution for managing parking operations efficiently. It supports real-time operations for both visitors and subscribers.
 
+The Vehicle Parking Management System is a comprehensive solution for managing parking operations efficiently. It supports real-time operations for both visitors and subscribers.
+---
 ### 2. Overview
+
 The Vehicle Parking Management System is designed to facilitate efficient parking slot management, vehicle entry/exit logging, reservations, and billing operations. It supports both visitor and subscriber parking operations in real time and is compatible with Java (Spring Boot) frameworks for backend development.
 
+---
 ### 3. Features
+
 1. **Parking Slot Management**: Manage parking slots, including adding, updating, deleting, and searching for availability.
 2. **User Management**: Handle user registration, login, and role-based access control for admins, staff, and customers.
 3. **Vehicle Logging**: Track vehicle entry and exit processes, updating parking slot statuses in real time.
 4. **Reservation System**: Enable users to book, modify, or cancel parking slots seamlessly.
 5. **Billing and Payments**: Generate bills dynamically based on parking duration and process payments securely.
-
+---
 ### 4. Technologies Used
 
 #### Backend (Spring Boot Microservices)
@@ -62,7 +67,7 @@ The Vehicle Parking Management System is designed to facilitate efficient parkin
 #### Database
 - **MySQL**: Relational database for storing application data.
 - **MySQL Workbench**: Database management tool.
-
+---
 ### 5. Architectural Diagram
 ```mermaid
 flowchart TD
@@ -122,7 +127,7 @@ flowchart TD
     class M external
     class GDB,HDB,IDB,JDB,KDB db
 ```
-
+---
 
 ### 6. Module Overview
 #### 6.1 User Management
@@ -140,14 +145,16 @@ Enables users to book, modify, or cancel parking slots. Ensures smooth reservati
 #### 6.5 Billing and Payments
 Generates bills based on parking duration and processes payments securely. Supports multiple payment methods for user convenience.
 
+---
 ### 7. API Gateway
 - Acts as a single entry point for all frontend requests.
 - Routes requests to appropriate backend services.
+---
 
 ### 8. Discovery Server (Eureka)
 - Facilitates service discovery for microservices in the system.
 - Ensures seamless communication between services.
-
+---
 ### 9. Deployment Strategy
 #### 9.1 Local Development
 - Frontend served via React dev server.  
@@ -164,13 +171,13 @@ Generates bills based on parking duration and processes payments securely. Suppo
 | VehicleLog   | LogID         | UserID, SlotID       |  
 | Reservation  | ReservationID | UserID, SlotID       |  
 | Invoice      | InvoiceID     | UserID               |  
-
+---
 ### 11. Non-Functional Requirements
 - **Performance**: Support 200+ concurrent users in development/test setups.
 - **Scalability**: Horizontal scalability using containerization (optional in the future).
 - **Security**: Role-based access, encrypted password storage, HTTPS for all data exchange.
 - **Usability**: Responsive and mobile-friendly UI, WCAG-compliant design.
-
+---
 ### 12. Assumptions and Constraints
 #### 12.1 Assumptions
 - Each slot accommodates only one vehicle.
@@ -358,7 +365,7 @@ cd MicroservicesVehicleParkingManagementSystem
 #### 14.5 Access the API Documentation
 - Open your browser and navigate to `http://localhost:8080/swagger-ui.html` to explore the API documentation. -->
 
-
+---
 ### 14. Setup Instructions
 
 #### 14.1 Prerequisites
@@ -456,7 +463,7 @@ cd vehicle-parking-management-system
       ```
     - The React app will typically open in your browser at `http://localhost:3000`.
 
-
+---
 <!-- ### 15. Testing
 Run the tests using Maven:
 ```bash
