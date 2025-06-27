@@ -471,6 +471,3 @@ Team 2
 
 Project Link: [Vehicle Parking Management System](https://github.com/your-username/vehicle-parking-management-system)
 
-
-
-### something somethinbgg
