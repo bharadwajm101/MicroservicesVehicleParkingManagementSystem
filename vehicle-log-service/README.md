@@ -205,26 +205,15 @@ The module leverages Spring Boot's exception handling mechanisms to return appro
 
 The `pom.xml` file defines the project's dependencies and build configuration. Key dependencies include:
 
-### Spring Boot Starters
 - **spring-boot-starter-web**: For RESTful web applications.
 - **spring-boot-starter-data-jpa**: For JPA and Hibernate integration.
 - **spring-boot-starter-actuator**: For monitoring and management.
 - **spring-boot-starter-security**: For security features (if implemented).
-- **spring-boot-starter-test**: For unit and integration testing.
-
-### Spring Cloud Netflix Eureka Client
+- **spring-boot-starter-test**: For unit and integration testing. 
 - **spring-cloud-starter-netflix-eureka-client**: Enables service registration with Eureka.
-
-### Lombok
 - **lombok**: Reduces boilerplate Java code.
-
-### MySQL Connector/J
 - **mysql-connector-j**: JDBC driver for MySQL database connection.
-
-### SpringDoc OpenAPI Starter WebMVC UI
 - **springdoc-openapi-starter-webmvc-ui**: Generates OpenAPI (Swagger) documentation.
-
-### Spring Boot DevTools
 - **spring-boot-devtools**: Provides development-time features like automatic restarts.
 
 
@@ -233,14 +222,12 @@ The `pom.xml` file defines the project's dependencies and build configuration. K
 ## 7. Deployment
 
  
-## 7. Deployment Instructions
- 
 #### Key Configuration
  
 Below is an excerpt from the `application.properties` file:
  
 ```properties
-spring.application.name=parking-slot-service
+spring.application.name=vehiclelog-service
 server.port=8082
 spring.datasource.url=jdbc:mysql://localhost:3306/vehiclelog_db
 spring.datasource.username=root
