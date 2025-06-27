@@ -225,7 +225,7 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
  
 2. **Navigate to the Project Directory**  
     ```bash
-    cd parking-slot-service
+    cd reservation-service
     ```
  
 3. **Build the Project**  
@@ -244,6 +244,6 @@ Ensure that the Eureka server and MySQL database are running before starting the
  
 ### Note
  
-Ensure MySQL is running and the `parking_db` database exists.  
+Ensure MySQL is running and the `reservation_db` database exists.  
 Eureka server should be running on port `8761` for service registration.  
 Swagger UI is available at `/swagger-ui.html` for API exploration.
