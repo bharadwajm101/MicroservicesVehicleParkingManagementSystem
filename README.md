@@ -127,6 +127,7 @@ flowchart TD
 ### 6. Module Overview
 #### 6.1 User Management
 Manages user registration, login, and role-based access control for admins, staff, and customers. Ensures secure authentication and authorization processes.
+- [User Service](./user-service/README.md)
 
 #### 6.2 Parking Slot Management
 Handles parking slot operations such as adding, updating, and checking availability. Maintains real-time status of parking slots.
