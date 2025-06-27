@@ -22,10 +22,10 @@ This document provides a low-level overview of the `Reservation-Service` module,
 
 5. [Error Handling](#5-error-handling)  
 
-6. [Dependencies](#6-dependencies)  
+6. [Maven Dependencies](#6-maven-dependencies)  
 
 7. [Deployment](#7-deployment)
-   * [7.1 Run Locally](#71-run-locally)
+   * [7.1 Steps to Deploy](#71-steps-to-deploy)
 
 ---
 
@@ -60,6 +60,7 @@ The `Reservation-Service` module is a critical component of the PMS, enabling us
 The `Reservation-Service` follows a **layered architecture** using **Spring Boot** and communicates with other PMS modules via REST APIs. The service relies on a relational database (e.g., MySQL or H2) to manage persistence.
 
 ### 2.1 Component Diagram
+
 ```mermaid
 flowchart LR
 
@@ -107,6 +108,7 @@ flowchart LR
   class E1,E2 model
 
 ```
+
 ### 2.2 Sequence Diagram
 
 ```mermaid
@@ -177,47 +179,71 @@ The module uses Spring Boot's global exception handling mechanisms to ensure con
 All error responses include a message and timestamp, aiding in debugging and user communication.
 
 ---
-
-## 6. Dependencies
+## 6. Maven Dependencies
  
 The `pom.xml` file defines the project's dependencies and build configuration. Key dependencies include:
- 
-### Spring Boot Starters
 - **spring-boot-starter-web**: For RESTful web applications.
 - **spring-boot-starter-data-jpa**: For JPA and Hibernate integration.
 - **spring-boot-starter-actuator**: For monitoring and management.
 - **spring-boot-starter-security**: For security features (if implemented).
 - **spring-boot-starter-test**: For unit and integration testing.
- 
-### Spring Cloud Netflix Eureka Client
 - **spring-cloud-starter-netflix-eureka-client**: Enables service registration with Eureka.
- 
-### Lombok
 - **lombok**: Reduces boilerplate Java code.
- 
-### MySQL Connector/J
 - **mysql-connector-j**: JDBC driver for MySQL database connection.
- 
-### SpringDoc OpenAPI Starter WebMVC UI
 - **springdoc-openapi-starter-webmvc-ui**: Generates OpenAPI (Swagger) documentation.
- 
-### Spring Boot DevTools
 - **spring-boot-devtools**: Provides development-time features like automatic restarts.
- 
 
 ---
-
+ 
 ## 7. Deployment
-
-## 7.1 Run Locally
-
-```bash
-# Clone this repo
-git clone <repository-url>
-
-# Navigate to the folder
-cd member-service
-
-# Build and run
-mvn clean install
-mvn spring-boot:run
+ 
+#### Key Configuration
+ 
+Below is an excerpt from the `application.properties` file:
+ 
+```properties
+spring.application.name=reservation-service
+server.port=8082
+spring.datasource.url=jdbc:mysql://localhost:3306/reservation_db
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka.instance.prefer-ip-address=true
+eureka.instance.hostname=localhost
+eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}
+```
+ 
+#### 7.1 Steps to Deploy
+ 
+1. **Clone the Repository**  
+    ```bash
+    git clone <repository-url>
+    ```
+ 
+2. **Navigate to the Project Directory**  
+    ```bash
+    cd parking-slot-service
+    ```
+ 
+3. **Build the Project**  
+    ```bash
+    mvn clean install
+    ```
+ 
+4. **Run the Application**  
+    ```bash
+    mvn spring-boot:run
+    ```
+ 
+Ensure that the Eureka server and MySQL database are running before starting the application.
+ 
+---
+ 
+### Note
+ 
+Ensure MySQL is running and the `parking_db` database exists.  
+Eureka server should be running on port `8761` for service registration.  
+Swagger UI is available at `/swagger-ui.html` for API exploration.
