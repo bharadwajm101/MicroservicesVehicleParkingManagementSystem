@@ -20,7 +20,7 @@ This document provides a low-level overview of the `VehicleLog-Service` module, 
    - [5.1 Common Error Codes](#51-common-error-codes) 
 6. [Maven Dependencies](#6-maven-dependencies)
 7. [Deployment](#7-deployment)
-   - [7.1 Run Locally](#71-run-locally)
+   - [7.1 Steps to Deploy](#71-steps-to-deploy)
 
 
  
@@ -232,16 +232,56 @@ The `pom.xml` file defines the project's dependencies and build configuration. K
 
 ## 7. Deployment
 
-## 7.1 Run Locally
-
-```bash
-# Clone this repo
-git clone <repository-url>
-
-# Navigate to the folder
-cd member-service
-
-# Build and run
-mvn clean install
-mvn spring-boot:run
-
+ 
+## 7. Deployment Instructions
+ 
+#### Key Configuration
+ 
+Below is an excerpt from the `application.properties` file:
+ 
+```properties
+spring.application.name=parking-slot-service
+server.port=8082
+spring.datasource.url=jdbc:mysql://localhost:3306/parking_db
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka.instance.prefer-ip-address=true
+eureka.instance.hostname=localhost
+eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}
+```
+ 
+#### 7.1 Steps to Deploy
+ 
+1. **Clone the Repository**  
+    ```bash
+    git clone <repository-url>
+    ```
+ 
+2. **Navigate to the Project Directory**  
+    ```bash
+    cd parking-slot-service
+    ```
+ 
+3. **Build the Project**  
+    ```bash
+    mvn clean install
+    ```
+ 
+4. **Run the Application**  
+    ```bash
+    mvn spring-boot:run
+    ```
+ 
+Ensure that the Eureka server and MySQL database are running before starting the application.
+ 
+---
+ 
+### Note
+ 
+Ensure MySQL is running and the `parking_db` database exists.  
+Eureka server should be running on port `8761` for service registration.  
+Swagger UI is available at `/swagger-ui.html` for API exploration.  
