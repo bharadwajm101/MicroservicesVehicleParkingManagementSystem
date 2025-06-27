@@ -22,13 +22,14 @@
 12. [Assumptions and Constraints](#12-assumptions-and-constraints)
 13. [Folder Structure](#13-folder-structure)
 14. [Setup Instructions](#14-setup-instructions)
-15. [Contact](#11-contact)
 
 ---
 ### 1. Introduction
 
 The Vehicle Parking Management System is a comprehensive solution for managing parking operations efficiently. It supports real-time operations for both visitors and subscribers.
+
 ---
+
 ### 2. Overview
 
 The Vehicle Parking Management System is designed to facilitate efficient parking slot management, vehicle entry/exit logging, reservations, and billing operations. It supports both visitor and subscriber parking operations in real time and is compatible with Java (Spring Boot) frameworks for backend development.
@@ -167,7 +168,7 @@ Generates bills based on parking duration and processes payments securely. Suppo
 | Table Name   | Primary Key   | Foreign Keys         |  
 |--------------|---------------|----------------------|  
 | User         | UserID        | –                    |  
-| ParkingSlot  | SlotID        | –                    |  
+| ParkingSlot  | SlotID        | UserID               |  
 | VehicleLog   | LogID         | UserID, SlotID       |  
 | Reservation  | ReservationID | UserID, SlotID       |  
 | Invoice      | InvoiceID     | UserID               |  
@@ -469,7 +470,7 @@ Run the tests using Maven:
 ```bash
 mvn test
 ``` -->
-### 11. Contact
+<!-- ### 15. Contact
 Team 2
 
-Project Link: [Vehicle Parking Management System](https://github.com/your-username/vehicle-parking-management-system)
+Project Link: [Vehicle Parking Management System](https://github.com/your-username/vehicle-parking-management-system) -->
