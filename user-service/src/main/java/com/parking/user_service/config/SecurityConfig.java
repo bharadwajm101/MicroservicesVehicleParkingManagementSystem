@@ -30,7 +30,7 @@ public class SecurityConfig {
             .requestMatchers(
                 "/api/users/register",
                 "/api/users/login",
-                // "/api/users/**",
+                "/api/users/**",
                 "/v3/api-docs/**",
                 "/swagger-ui/**",
                 "/swagger-ui.html"
@@ -39,8 +39,7 @@ public class SecurityConfig {
                 .permitAll()
                 .anyRequest().authenticated() 
             )
-            .userDetailsService(userDetailsService)
-            .httpBasic();
+            .userDetailsService(userDetailsService);
         return http.build();
     }
 }
