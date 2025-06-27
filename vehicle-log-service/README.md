@@ -242,7 +242,7 @@ Below is an excerpt from the `application.properties` file:
 ```properties
 spring.application.name=parking-slot-service
 server.port=8082
-spring.datasource.url=jdbc:mysql://localhost:3306/parking_db
+spring.datasource.url=jdbc:mysql://localhost:3306/vehiclelog_db
 spring.datasource.username=root
 spring.datasource.password=root
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -263,7 +263,7 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
  
 2. **Navigate to the Project Directory**  
     ```bash
-    cd parking-slot-service
+    cd vehiclelog-service
     ```
  
 3. **Build the Project**  
