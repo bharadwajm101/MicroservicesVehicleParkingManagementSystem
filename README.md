@@ -149,7 +149,7 @@ Enables users to book, modify, or cancel parking slots. Ensures smooth reservati
 
 #### 6.5 Billing and Payments
 Generates bills based on parking duration and processes payments securely. Supports multiple payment methods for user convenience.
-
+- [Billing Service](./billing-service/README.md)
 ---
 ### 7. API Gateway
 - Acts as a single entry point for all frontend requests.
